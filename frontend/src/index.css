@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 252 89% 69%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 152 100% 50%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 252 89% 69%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 12%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 12%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 15%;
+    --input: 217 33% 15%;
+    --ring: 152 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+  .neon-text {
+    color: #00FF87;
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.5);
+  }
+  .neon-border {
+    border-color: #00FF87;
+    box-shadow: 0 0 10px rgba(0, 255, 135, 0.3);
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, #00FF87 0%, #6C63FF 100%);
+  }
+  .gradient-dark {
+    background: linear-gradient(135deg, #0a0e1a 0%, #111827 100%);
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .prose-fit {
+    @apply text-foreground leading-relaxed;
+  }
+  .prose-fit h1, .prose-fit h2, .prose-fit h3 {
+    @apply font-display font-bold mt-6 mb-3 text-foreground;
+  }
+  .prose-fit h1 { @apply text-2xl; }
+  .prose-fit h2 { @apply text-xl; }
+  .prose-fit h3 { @apply text-lg; }
+  .prose-fit p { @apply mb-4; }
+  .prose-fit ul { @apply list-disc pl-6 mb-4 space-y-1; }
+  .prose-fit ol { @apply list-decimal pl-6 mb-4 space-y-1; }
+  .prose-fit strong { @apply font-semibold text-foreground; }
+  .prose-fit table {
+    @apply w-full border-collapse mb-4 text-sm;
+  }
+  .prose-fit th {
+    @apply bg-muted font-semibold p-2 text-left border border-border;
+  }
+  .prose-fit td {
+    @apply p-2 border border-border;
+  }
+  .prose-fit code {
+    @apply bg-muted px-1 py-0.5 rounded text-sm font-mono;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(108, 99, 255, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(108, 99, 255, 0.7);
+}
