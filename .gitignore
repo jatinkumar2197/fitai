@@ -1,12 +1,6 @@
-# Python
 venv/
 __pycache__/
-*.pyc
-.env
-
-# Node
 node_modules/
 dist/
-
-# VS Code
+.env
 .vscode/
